@@ -2,10 +2,10 @@ import axios from 'axios';
 import { redirect } from "react-router-dom";
 
 const NGROK_LINK = "https://techtest.wbm.or.tz/";
-// export const BASE_URL = NGROK_LINK+"api/";
+export const BASE_URL = NGROK_LINK+"api/";
 
 export const APP_NAME = "Class Attendence";
-export const BASE_URL = "http://127.0.0.1:8000/api/";
+// export const BASE_URL = "http://127.0.0.1:8000/api/";
 
 export const BASE_URL_PUBLIC = "http://127.0.0.1:8000/";
 
