@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react"
 import ProtectedLayout from "../layouts/protectedLayout"
 import moment from 'moment';
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import axios from 'axios';
 import { BASE_URL } from "../commons";
 axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.getItem('access_token');
 
 export const LessonAttendence = () => {
+    const { lesson_id } = useParams()
     const [ studentList, setStudentList ] = useState( [] );
     const getAttendence = async () => {
         try{
-            let results = await axios.get(`${BASE_URL}attendence/6`);
+            let results = await axios.get(`${BASE_URL}attendence/${lesson_id}`);
             if( results.data.status ) {
                 setStudentList( results.data.attendence)
             }

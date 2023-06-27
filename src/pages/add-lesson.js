@@ -123,6 +123,8 @@ export const AddLession = props => {
 
                 <th scope="col">Created at</th>
                 <th scope="col">QR-code</th>
+                <th scope="col">Attendence</th>
+
 
                 </tr>
             </thead>
@@ -138,6 +140,8 @@ export const AddLession = props => {
                 <td>{ h.ends_at }</td> 
                 <td>{moment(h.created_at).format('ddd, MM Do YYYY')}</td>
                 <td><NavLink to = {`/scan-code/${h.id}`}><i className = "bi bi-code-slash"></i></NavLink></td>
+                <td><NavLink to = {`/lesson-attendence/${h.id}`}><i className = "bx bx-list-ul"></i></NavLink></td>
+
                 </tr>)}
                 
             </tbody>
